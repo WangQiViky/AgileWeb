@@ -66,6 +66,15 @@ public class VIPCardController {
     }
 
 
+    /**
+     * 获得用户的充值记录
+     * @param userId
+     * @return
+     */
+    @GetMapping("/{userId}/getChargeHistory")
+    public ResponseVO getChargeHistoryByUserId(@PathVariable int userId){
+        return vipService.getChargeHistoryByUserId(userId);
+    }
 
 
 }
