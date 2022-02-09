@@ -11,7 +11,7 @@ import java.util.Date;
  */
 @Setter
 @Getter
-public class AudiencePriceVO{
+public class AudiencePriceVO {
     private Date date;
     /**
      * 客单价
