@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--用户的首页界面-->
+<head>
+    <meta charset="UTF-8">
+    <title>电影</title>
+    <!-- Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css"/>
+    <!-- font-asesome图标库 -->
+    <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css"/>
+
+    <!-- 引入css样式文件 -->
+    <link rel="stylesheet" type="text/css" href="/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/userHome.css"/>
+
+    <!-- 引入js脚本文件 -->
+    <!-- jquery -->
+    <script src="/js/jquery.js"></script>
+    <!-- Bootstrap 核心 JavaScript 文件 -->
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/request.js"></script>
+    <script src="/js/userHome.js"></script>
+
+</head>
+<body>
+    <div class="nav-top-container">
+        <div class="nav-logo title">NJU-Se电影购票系统</div>
+        <ul class="nav nav-pills">
+            <li role="presentation" class="active"><a href="#">首页</a></li>
+            <li role="presentation"><a href="/user/movie">电影</a></li>
+        </ul>
+        <div class="btn-group">
+            <button class="nav-user-container btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img class="avatar-sm" src="/images/defaultAvatar.jpg" />
+                <span class="gray-text" style="vertical-align: middle">用户A&nbsp;<span class="caret"></span></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="/user/buy">电影票</a></li>
+                <li><a href="/user/member">卡包</a></li>
+                <li><a href="/user/buyHistory">历史记录</a></li>
+                <li id="logout"><a href="#">登出</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 可能不需要的功能 -->
+
+    <div class="content-container">
+        <div class="movie-contianer">
+<!--        <p class="title primary-text">热映电影</p>-->
+        <div class="movie-on-list">
+
+
+            <div id="myCarousel" class="carousel slide">
+                <!-- 轮播（Carousel）指标 -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+                <!-- 轮播（Carousel）项目 -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <a href="/user/movieDetail?id=11">
+                            <img src="/images/img.jpg" alt="First slide">
+                            <div class="carousel-caption">
+                                <span class="bottom">惊奇队长</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="item">
+                        <a href="/user/movieDetail?id=16">
+                            <img src="/images/timg.jpg" alt="Second slide">
+                            <div class="carousel-caption">
+                                <span class="bottom">比悲伤更悲伤的故事</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="item">
+                        <a href="/user/movieDetail?id=10">
+                            <img src="/images/xiamu.jpg" alt="Third slide">
+                            <div class="carousel-caption">
+                                <span class="bottom">夏目友人帐</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!-- 轮播（Carousel）导航 -->
+                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                    <span class="icon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                    <span class="icon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+
+
+        </div>
+
+
+        <p class="title primary-text">即将上映</p>
+        <div class="movie-on-list card">
+
+            <div class="row">
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <img src="/images/ga.jpg"
+                             alt="通用的占位符缩略图" class="movie-img">
+                        <div class="caption">
+                            <h3>银河护卫队</h3>
+                            <p>影片剧情讲述因偷走神秘球体而被疯狂追杀的“星爵”彼得·奎尔被迫结盟四个格格不入的乌合之众——卡魔拉、火箭浣熊、树人格鲁特和毁灭者德拉克斯，他们必须破釜沉舟决一死战，才可能拯救整个银河系。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <img src="/images/tie.jpg"
+                             alt="通用的占位符缩略图" class="movie-img">
+                        <div class="caption">
+                            <h3>钢铁侠3</h3>
+                            <p>影片根据漫威漫画改编，故事时间发生在《复仇者联盟》纽约大战结束之后，讲述了托尼·斯塔克的生活被敌人毁灭殆尽，无路可退的他必须依靠精良的高科技装备以及过人才智，保护自己和身边最亲近的人，同时找出真正的幕后元凶的故事。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <img src="/images/chui.jpg"
+                             alt="通用的占位符缩略图" class="movie-img">
+                        <div class="caption">
+                            <h3>雷神索尔</h3>
+                            <p>《雷神》的故事发生在现今的地球以及艾斯卡的奇幻世界。故事的中心人物是拥有强大神力的雷神托尔（Thor），但是他自大鲁莽的行为掀起了一场古老的战争，因此被贬入凡间作为惩罚，被迫与人类一同生活。托尔必须学会如何成为一个真正的英雄，才能对抗来自神界的强大黑暗势力。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <img src="/images/beauty.jpg"
+                             alt="通用的占位符缩略图" class="movie-img">
+                        <div class="caption">
+                            <h3>美国队长</h3>
+                            <p>该片改编自同名漫画作品，以二战时期为背景，讲述了一个叫做史蒂夫·罗杰斯的年轻人参加美军秘密试验，在被注射了超级士兵的血清后成为“美国队长”，与纳粹展开对抗的故事。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </div>
+
+
+        <div class="statistic-container">
+            <p class="title primary-text">票房统计</p>
+                <ul class="top-sell-list card" id="boxingOffice">
+                </ul>
+
+            <p class="title primary-text">最受欢迎</p>
+        <ul class="top-expectation-list card" id="popularMovie">
+        </ul>
+        </div>
+    </div>
+</body>
+</html>
