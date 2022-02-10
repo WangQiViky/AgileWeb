@@ -128,5 +128,12 @@ public class TicketController {
         return ticketService.refundById(idList);
     }
 
+    /**
+     * 筛选消费达到一定金额的用户
+     */
+    @GetMapping("/allMember")
+    public ResponseVO getUserByConsume(@RequestParam("consume") double consume){
+        return ticketService.getUserByConsume(consume);
+    }
 
 }
