@@ -4,6 +4,8 @@ import com.example.cinema.bl.promotion.ActivityService;
 import com.example.cinema.vo.ActivityBatchDeleteForm;
 import com.example.cinema.vo.ActivityForm;
 import com.example.cinema.vo.ActivityUpdateVO;
+import com.example.cinema.vo.ActivityBatchDeleteForm;
+import com.example.cinema.vo.ActivityVO;
 import com.example.cinema.vo.ResponseVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

@@ -1,9 +1,6 @@
 package com.example.cinema.bl.management;
 
-import com.example.cinema.vo.ResponseVO;
-import com.example.cinema.vo.ScheduleBatchDeleteForm;
-import com.example.cinema.vo.ScheduleForm;
-import com.example.cinema.vo.ScheduleViewForm;
+import com.example.cinema.vo.*;
 
 import java.util.Date;
 
