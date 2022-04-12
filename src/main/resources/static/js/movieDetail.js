@@ -9,44 +9,44 @@ $(document).ready(function(){//页面一加载好后就执行该匿名函数
         getMovieLikeChart();//获取想看人数的图表
 
     function getMovieLikeChart() {
-       getRequest(
-           '/movie/' + movieId + '/like/date',
-           function(res){
-               var data = res.content,
+        getRequest(
+            '/movie/' + movieId + '/like/date',
+            function(res){
+                var data = res.content,
                     dateArray = [],
                     numberArray = [];
-               data.forEach(function (item) {
-                   dateArray.push(item.likeTime);
-                   numberArray.push(item.likeNum);
-               });
+                data.forEach(function (item) {
+                    dateArray.push(item.likeTime);
+                    numberArray.push(item.likeNum);
+                });
 
-               var myChart = echarts.init($("#like-date-chart")[0]);
+                var myChart = echarts.init($("#like-date-chart")[0]);
 
-               // 指定图表的配置项和数据
-               var option = {
-                   title: {
-                       text: '想看人数变化表'
-                   },
-                   xAxis: {
-                       type: 'category',
-                       data: dateArray
-                   },
-                   yAxis: {
-                       type: 'value'
-                   },
-                   series: [{
-                       data: numberArray,
-                       type: 'line'
-                   }]
-               };
+                // 指定图表的配置项和数据
+                var option = {
+                    title: {
+                        text: '想看人数变化表'
+                    },
+                    xAxis: {
+                        type: 'category',
+                        data: dateArray
+                    },
+                    yAxis: {
+                        type: 'value'
+                    },
+                    series: [{
+                        data: numberArray,
+                        type: 'line'
+                    }]
+                };
 
-               // 使用刚指定的配置项和数据显示图表。
-               myChart.setOption(option);
-           },
-           function (error) {
-               alert(error);
-           }
-       );
+                // 使用刚指定的配置项和数据显示图表。
+                myChart.setOption(option);
+            },
+            function (error) {
+                alert(error);
+            }
+        );
     }
 
     function getMovie() {
@@ -94,10 +94,10 @@ $(document).ready(function(){//页面一加载好后就执行该匿名函数
     $('#like-btn').click(function () {//客户点击“想看”按钮时会触发
         var url = isLike ?'/movie/'+ movieId +'/unlike?userId='+ userId :'/movie/'+ movieId +'/like?userId='+ userId;
         postRequest(
-             url,
+            url,
             null,
             function (res) {
-                 isLike = !isLike;
+                isLike = !isLike;
                 getMovie();
             },
             function (error) {
@@ -118,7 +118,7 @@ $(document).ready(function(){//页面一加载好后就执行该匿名函数
                 alert(error);
             }
         );
-       //alert('交给你们啦，修改时需要在对应html文件添加表单然后获取用户输入，提交给后端，别忘记对用户输入进行验证。（可参照添加电影&添加排片&修改排片）');
+        //alert('交给你们啦，修改时需要在对应html文件添加表单然后获取用户输入，提交给后端，别忘记对用户输入进行验证。（可参照添加电影&添加排片&修改排片）');
     });
 
     $("#delete-btn").click(function () {//下架电影
@@ -138,8 +138,8 @@ $(document).ready(function(){//页面一加载好后就执行该匿名函数
                     }
                 },
                 function (error) {
-                alert(JSON.stringify(error));
-            }
+                    alert(JSON.stringify(error));
+                }
             )
         }
         //alert('交给你们啦，下架别忘记需要一个确认提示框，也别忘记下架之后要对用户有所提示哦');
@@ -190,7 +190,7 @@ $(document).ready(function(){//页面一加载好后就执行该匿名函数
             function (res) {//传递的是MovieForm类型的数据
                 getMovie();
                 $("#movieEditModal").modal('hide');//表单隐藏
-               },
+            },
             function (error) {
                 alert(error);
             }
