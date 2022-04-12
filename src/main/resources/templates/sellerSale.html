@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>电影详情</title>
+    <title>售票</title>
     <!-- Bootstrap 核心 CSS 文件 -->
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.css"/>
     <!-- font-asesome图标库 -->
@@ -10,7 +10,7 @@
 
     <!-- 引入css样式文件 -->
     <link rel="stylesheet" type="text/css" href="/css/common.css"/>
-    <link rel="stylesheet" type="text/css" href="/css/userMovieBuy.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/sellerSale.css"/>
     <link rel="stylesheet" type="text/css" href="/css/cinemaHall.css"/>
 
     <!-- 引入js脚本文件 -->
@@ -20,32 +20,25 @@
     <script src="/js/bootstrap.js"></script>
     <script src="/js/request.js"></script>
     <script src="/js/movieDetail.js"></script>
-    <script src="/js/userMovieBuy.js"></script>
+    <script src="/js/sellerSale.js"></script>
 </head>
 <body>
 <!--用户界面上方的导航栏-->
 <div class="nav-top-container">
     <div class="nav-logo title">NJU-Se电影购票系统</div>
-    <ul class="nav nav-pills">
-        <li role="presentation"><a href="/user/home">首页</a></li>
-        <li role="presentation" class="active"><a href="/user/movie">电影</a></li>
-    </ul>
     <div class="btn-group">
-        <button class="nav-user-container btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">
-            <img class="avatar-sm" src="/images/defaultAvatar.jpg"/>
-            <span class="gray-text" style="vertical-align: middle">用户A&nbsp;<span class="caret"></span></span>
+        <button class="nav-user-container btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img class="avatar-sm" src="/images/defaultAvatar.jpg" />
+            <span class="gray-text" style="vertical-align: middle">售票员&nbsp;<span class="caret"></span></span>
         </button>
         <ul class="dropdown-menu">
-            <li><a href="/user/buy">电影票</a></li>
-            <li><a href="/user/member">卡包</a></li>
-            <li><a href="/user/buyHistory">历史记录</a></li>
             <li id="logout"><a href="#">登出</a></li>
         </ul>
     </div>
 </div>
 <!--用户点击选座购票后出现的界面-->
 <div class="content-container">
+    <div id="alertWindow" style="display:none"></div>
     <div class="card col-md-12">
         <!--以下div里是选座页面的信息--->
         <div class="col-md-10 col-md-offset-1" id="seat-state">
@@ -93,7 +86,7 @@
                     <!--onclick:点击这个按钮时，执行userMovieBuy.js中的orderConfirmClick()函数---->
                     <button id="order-confirm-btn" class="btn btn-primary" onclick="orderConfirmClick()"
                             disabled="disabled">
-                        	确认下单
+                        确认下单
                     </button>
                 </div>
             </div>
@@ -174,7 +167,7 @@
 
             <div class="success-notice" style="text-align: center">
                 <img src="/images/success.png"/>
-                <div class="hint">支付成功，至<a class="hint" href="/user/buy">“我的电影票”</a>页面查看</div>
+                <div class="hint">支付成功!</div>
             </div>
         </div>
     </div>

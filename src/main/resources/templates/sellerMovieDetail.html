@@ -20,30 +20,23 @@
     <script src="/js/bootstrap.js"></script>
     <script src="/js/request.js"></script>
     <script src="/js/movieDetail.js"></script>
-    <script src="/js/userMovieDetail.js"></script>
+    <script src="/js/sellerMovieDetail.js"></script>
 </head>
 <body>
 <div class="nav-top-container">
     <div class="nav-logo title">NJU-Se电影购票系统</div>
-    <ul class="nav nav-pills">
-        <li role="presentation"><a href="/user/home">首页</a></li>
-        <li role="presentation" class="active"><a href="/user/movie">电影</a></li>
-    </ul>
     <div class="btn-group">
-        <button class="nav-user-container btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">
-            <img class="avatar-sm" src="/images/defaultAvatar.jpg"/>
-            <span class="gray-text" style="vertical-align: middle">用户A&nbsp;<span class="caret"></span></span>
+        <button class="nav-user-container btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img class="avatar-sm" src="/images/defaultAvatar.jpg" />
+            <span class="gray-text" style="vertical-align: middle">售票员&nbsp;<span class="caret"></span></span>
         </button>
         <ul class="dropdown-menu">
-            <li><a href="/user/buy">电影票</a></li>
-            <li><a href="/user/member">卡包</a></li>
-            <li><a href="/user/buyHistory">历史记录</a></li>
             <li id="logout"><a href="#">登出</a></li>
         </ul>
     </div>
 </div>
 <div class="content-container">
+    <div id="alertWindow" style="display:none"></div>
     <div class="content-header">
         <img id="movie-img">
         <div class="movie-basic-info">
@@ -57,10 +50,10 @@
             <div><span>导 演 ：</span><span id="movie-director"></span></div>
             <div><span>主 演 ：</span><span id="movie-starring"></span></div>
             <div><span>编 剧 ：</span><span id="movie-writer"></span></div>
-            <div class="movie-operations">
-                <button type="button" class="btn btn-primary" id="like-btn"><i class='icon-heart'></i><span> 想 看</span>
-                </button>
-            </div>
+<!--            <div class="movie-operations">-->
+<!--                <button type="button" class="btn btn-primary" id="like-btn"><i class='icon-heart'></i><span> 想 看</span>-->
+<!--                </button>-->
+<!--            </div>-->
         </div>
     </div>
     <div class="seesion-container">
@@ -88,6 +81,7 @@
             </div>
         </div>
     </div>
+
 </div>
 </body>
 </html>
