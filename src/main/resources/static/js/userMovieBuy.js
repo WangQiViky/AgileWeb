@@ -25,6 +25,7 @@ $(document).ready(function () {
 
     getInfo();
 
+
     function getInfo() {
         //向服务器请求数据
         getRequest(
@@ -35,11 +36,21 @@ $(document).ready(function () {
                 }
             },
             function (error) {
-                alert(JSON.stringify(error));
+                alertWin(JSON.stringify(error));
             }
         );
     }
 });
+
+function alertWin(message) {
+    console.log(message);
+    var meStr="<h3><span class='label label-danger' style='margin-left:600px;color:white;position:absolute;z-index:9999; top: 80px;'" +
+        ">"+message+"</span></h3>"
+    console.log(meStr);
+    $('#alertWindow').html(meStr);
+    $("#alertWindow").show().delay(1500).hide(50);
+    // $("#alertWindow").show();
+}
 
 function renderSchedule(schedule, seats) {
     //设置选座界面中右侧的信息和支付界面的表中的信息
@@ -88,7 +99,7 @@ function renderSchedule(schedule, seats) {
 //在选座位时，点击座位时触发以下函数
 function seatClick(id, i, j) {
     //let用来声明块级作用域的变量
-    let seat = $('#' + id);
+    var seat = $('#' + id);
     if (seat.hasClass("cinema-hall-seat-choose")) {
         //点白变绿
         seat.removeClass("cinema-hall-seat-choose");
@@ -114,7 +125,7 @@ function seatClick(id, i, j) {
     });
 
     //设置选座界面的“座位：”信息
-    let seatDetailStr = "";
+    var seatDetailStr = "";
     if (selectedSeats.length === 0) {
         seatDetailStr += "还未选择座位"
         //确认下单的按钮禁用
@@ -174,7 +185,7 @@ function orderConfirmClick() {
             renderOrder(orderInfo);
         },
         function (error) {
-            alert(error);
+            alertWin(error);
         }
     );
 
@@ -207,7 +218,7 @@ function orderConfirmClick() {
             }
         },
         function (error) {
-            alert(error);
+            alertWin(error);
         });
 }
 
@@ -300,11 +311,11 @@ function payConfirmClick() {
                 if(res.success){
                     postPayRequest();
                 }else{
-                    alert(res.message);
+                    alertWin(res.message);
                 }
             },
             function (error) {
-                alert(error);
+                alertWin(error);
             }
         );
 
@@ -325,7 +336,7 @@ function payConfirmClick() {
                     }
                 );
             } else {
-                alert("银行卡号或密码错误");
+                alertWin("银行卡号或密码错误");
             }
         }
     }
